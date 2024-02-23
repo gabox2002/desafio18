@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Películas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <img class="portada" src="./images/Premios-Oscar.png" alt="">
+        <div class="navigation">
+            <h1>Películas Premiadas</h1>
+            <div class="searchMovies">
+                <form id="search-form">
+                    <label for="search-input">Filtrar por título:</label><br>
+                    <input type="text" id="search-input" placeholder="">
+                </form>
+                <form id="filter-form">
+                    <label for="filter-input">Filtrar por año:</label><br>
+                    <input type="number" id="filter-input" min="1900" max="2022">
+                </form>
+            
+                <!-- Botón para abrir el modal -->
+                <button class="addBtn" onclick="openModal()">Agregar película</button>
+
+                <!-- Modal -->
+                <div id="overlay" onclick="closeModal()"></div>
+                <div id="add-modal">
+                    <form id="add-form">
+                        <label for="title-input">Título:</label>
+                        <input type="text" id="title-input" required>
+                        <label for="description-input">Descripción:</label>
+                        <textarea id="description-input" required></textarea>
+                        <label for="year-input">Año de lanzamiento:</label>
+                        <input type="number" id="year-input" min="1900" max="2024" required>
+                        <label for="image-input">Imagen:</label>
+                        <input type="file" id="image-input" required>
+                        <button type="button" onclick="addMovieAndClose()">Agregar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="movie-list">
+        <!-- Aquí se mostrará la lista de películas -->
+    </main>
+    <footer>
+        <div class="copyright">
+            <p>
+                Desarrollado por Gabriel Quispe &copy; 2024
+            </p>
+        </div>
+    </footer>
+    <script src="./js/movies.js"></script>
+    <script src="./js/main.js"></script>
+
+
+</body>
+</html>

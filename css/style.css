@@ -1,0 +1,184 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.portada {
+    width: 100%;
+    height: 250px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+}
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+}
+.searchMovies {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-left: 40px;
+    gap: 40px;
+}
+
+#search-input,
+#filter-input {
+    margin-bottom: 1rem;
+    width: 200px;
+}
+.addBtn {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #508b34;
+    box-shadow: 0 5px #243a01;
+}
+.addBtn:hover {
+    box-shadow: 0 1px #5c8e0b;
+    top: 1px;
+}
+
+#movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 500px));
+    grid-gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+#movie-list h2 {
+    margin: 0;
+}
+.movie-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.movie-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.movie-details {
+    padding-left: 1rem;
+}
+.movie-details p:last-child {
+    font-style: italic;
+}
+#add-form {
+    background-color: hsl(0, 0%, 0%);
+    padding: 1rem;
+    flex-direction: column;
+    width: 320px;
+}
+
+#add-form input,
+#add-form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#add-form button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#add-form button:hover {
+    background-color: #2eb422;
+}
+#add-form input, textarea {
+    margin-top: 0.5rem;
+}
+/* Estilos para el modal */
+#add-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f5f5f5;
+    padding: 0.2rem;
+    z-index: 1000;
+}
+
+#add-modal input,
+#add-modal textarea,
+#add-modal button {
+    margin-bottom: 1rem;
+}
+
+/* Estilo para cubrir la pantalla cuando el modal está activo */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.copyright {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+
+    border-top: 1px solid #d2b495;
+}
+
+.copyright p {
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px !important;
+    }
+    .portada {
+        width: 100%;
+        height: 100px;
+    }
+    .searchMovies {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    #filter-input,
+    #search-input,
+    .addBtn {
+        width: 100%;
+    }
+    .copyright {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
